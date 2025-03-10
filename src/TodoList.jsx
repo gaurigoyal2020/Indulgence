@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import Todo from './Todo'
+import CreateTodo from './CreateTodo';
 
 function TodoList() {
     const [todos, setTodos] = useState([]);
@@ -20,7 +21,9 @@ function TodoList() {
 
     return (
         <>
-            <div className="todo-List">   
+            <CreateTodo />
+            <div className="todo-list bg-transparent p-4 shadow-lg shadow-amber-200
+            rounded-lg max-w-2xl">   
                 {
                     todos.map((todo) => {
                         return <Todo key={todo.id} title={todo.title} completed={todo.completed}/>;
