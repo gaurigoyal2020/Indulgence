@@ -20,17 +20,20 @@ function TodoList() {
     , []);
 
     return (
-        <>
-            <CreateTodo />
-            <div className="todo-list bg-transparent p-4 shadow-lg shadow-amber-200
-            rounded-lg max-w-2xl">   
-                {
-                    todos.map((todo) => {
-                        return <Todo key={todo.id} title={todo.title} completed={todo.completed}/>;
-                    })
-                }
+        <div className="h-screen bg-[url(/bg1.jpg)] sm:bg-contain md:bg-cover lg:bg-fixed">
+            <div className="flex flex-col items-center">
+                
+                <CreateTodo setTodos={setTodos} />
+                <div className="todo-list bg-transparent mt-5 p-4 shadow-lg shadow-amber-200
+                    rounded-lg max-w-2xl">   
+                    {
+                        todos.map((todo) => {
+                            return <Todo  key={todo.id} id={todo.id} title={todo.title} completed={todo.completed}/>;
+                        })
+                    }
+                </div>
             </div>
-        </>
+        </div>
     );
 }
 
